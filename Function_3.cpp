@@ -1,5 +1,6 @@
 #include <iostream>
-using namspace std;
+#include <iomanip>
+using namespace std;
 
 void input( int& hours24, int& minutes);
 void output( int hours, int minutes);
@@ -42,5 +43,21 @@ int main()
   }
 
   return 0;
+}
+
+void input(int& hours24, int& minutes)
+{
+  char colon;
+  cout<< "Enter 24 hour time in the format HH:MM\n";
+  cin >> hours24 >> colon >> minutes;
+}
+
+void output(int hours, int minutes)
+{
+  cout<<"Time in 24 hour fotmat:\n\n"
+      <<setfill('0') <<setw(2)<<hours
+      <<";"
+      <<setfill('0')<<setw(2<<minutes)
+      <<endl;
 }
 
